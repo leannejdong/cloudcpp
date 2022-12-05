@@ -3,10 +3,8 @@
 
 sudo docker build --no-cache -t linuxcenv .
 
-sudo docker run -it -v $(pwd):/work --rm linuxcenv
+sudo docker run -it --rm --name boosteg -v $(pwd):/work linuxcenv
 
-ls build
-
-build/linux_app
+do your usual thing with cmake
 
 Go to setting->toolchain->select Docker, make sure it is auto-detected
