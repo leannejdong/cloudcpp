@@ -1,5 +1,5 @@
 
-# docker build instruction (C++ development over clion IDE)
+# docker build instruction 
 
 (note: add user if needed `sudo gpasswd -a $USER docker` then `systemctl start docker`)
 
