@@ -1,6 +1,12 @@
 #include <boost/thread.hpp>
 #include <boost/chrono.hpp>
+#include <nlohmann/json.hpp>
+#include <iomanip>
 #include <iostream>
+#include <fstream>
+
+using json = nlohmann::json;
+
 void wait(int seconds)
 {
     boost::this_thread::sleep_for(boost::chrono::seconds{seconds});
@@ -17,6 +23,20 @@ int main()
 {
     boost::thread t{thread};
     t.join();
+
+    json j = {{"pi", 3.141}, {"happy", true}, {"name", "leanne"}};
+
+    std::cout << j << std::endl;
+
+    std::cout << j["pi"] << std::endl;
+
+    j["pi"] = 3.143;
+
+    j["happy"] = "sad";
+
+    std::cout << j << std::endl;
+
+
 }
 
 // #include <stdio.h>

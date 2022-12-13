@@ -17,6 +17,7 @@ RUN apt-get update \
     clang \
     rsync \
     tar \
+    nlohmann-json3-dev\
 && apt-get clean
 
 WORKDIR /work
